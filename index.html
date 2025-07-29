@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Corazón con Palabras</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .circle-effect {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border: 2px solid white;
+      border-radius: 50%;
+      top: 43%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: blink 1s infinite;
+      pointer-events: none;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .heart span.ari {
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="Latidos de un corazón real.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <div class="heart">
+    <!-- Círculo animado alrededor de "ARI" -->
+    <div class="circle-effect"></div>
+
+    <!-- Cima -->
+    <span style="top: 5%; left: 28%;">HERMOSA</span>
+    <span style="top: 5%; left: 72%;">PRECIOSA</span>
+
+    <!-- Nivel 2 -->
+    <span style="top: 11%; left: 18%;">NIÑA</span>
+    <span style="top: 11%; left: 36%;">BELLA</span>
+    <span style="top: 11%; left: 60%;">TE</span>
+    <span style="top: 11%; left: 85%;">QUIERO</span>
+
+    <!-- Nivel 3 -->
+    <span style="top: 18%; left: 14%;">HELLO</span>
+    <span style="top: 18%; left: 43%;">KITTY</span>
+    <span style="top: 18%; left: 56%;">HOLA</span>
+    <span style="top: 18%; left: 86%;">DEMONIO</span>
+
+    <!-- Nivel 4 -->
+    <span style="top: 27%; left: 18%;">PRINCESA</span>
+    <span style="top: 27%; left: 82%;">BELLA</span>
+
+    <!-- Nivel 5 -->
+    <span style="top: 35%; left: 24%;">GUAPA</span>
+    <span style="top: 35%; left: 76%;">TULIPANES</span>
+
+    <!-- Nivel 6 -->
+    <span style="top: 43%; left: 27%;">ROSAS</span>
+    <span class="ari" style="top: 43%; left: 50%;" onclick="window.location.href='niña.html'">ARI</span>
+    <span style="top: 43%; left: 75%;">LIRIOS</span>
+
+    <!-- Nivel 7 -->
+    <span style="top: 52%; left: 28%;">BRILLAS</span>
+    <span style="top: 52%; left: 72%;">CORAZÓN</span>
+
+    <!-- Nivel 8 -->
+    <span style="top: 60%; left: 35%;">OJITOS</span>
+    <span style="top: 60%; left: 63%;">LINDOS</span>
+
+    <!-- Nivel 9 -->
+    <span style="top: 68%; left: 48%;">ÚNICA</span>
+  </div>
+</body>
+</html>

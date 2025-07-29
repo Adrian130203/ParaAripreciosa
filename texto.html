@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Ari</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at bottom, #000 0%, #111 100%);
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
+    .estrella {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: parpadeo 2s infinite alternate;
+    }
+
+    @keyframes parpadeo {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    .palabra {
+      position: absolute;
+      font-size: 8em;
+      color: white;
+      text-shadow: 0 0 10px #f0f, 0 0 20px #f0f, 0 0 30px #f0f;
+      opacity: 0;
+      animation: aparecer 0.8s ease-out forwards, desaparecer 1.5s ease-out forwards;
+      animation-delay: var(--delay), calc(var(--delay) + 4s);
+    }
+
+    .uno { top: 20%; left: 20%; --delay: 0s; }
+    .dos { top: 40%; right: 20%; --delay: 0.5s; }
+    .tres { bottom: 15%; left: 35%; --delay: 1s; }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.6); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes desaparecer {
+      to { opacity: 0; }
+    }
+
+    .texto {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 1.2em;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 5vh;
+      opacity: 0;
+      animation: mostrarTexto 1s ease forwards;
+      animation-delay: 6s;
+      line-height: 1.8;
+      word-break: keep-all;
+    }
+
+    @keyframes mostrarTexto {
+      to { opacity: 1; }
+    }
+
+    .palabra-texto {
+      display: inline-block;
+      margin: 0 4px;
+      color: white;
+      -webkit-text-stroke: 0.6px pink;
+      opacity: 0;
+      animation: escribir 0.2s forwards;
+    }
+
+    @keyframes escribir {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .final {
+      font-size: 1.5em;
+      margin-top: 40px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay:97s;
+      -webkit-text-stroke: 0.6px pink;
+      font-style: italic;
+    }
+
+    .firma {
+      font-size: 2em;
+      margin-top: 10px;
+      text-align: center;
+      color: white;
+      -webkit-text-stroke: 0.6px pink;
+      opacity: 0;
+      animation: fadeIn 15s forwards;
+      animation-delay: 97s;
+      font-style: italic;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música -->
+  <audio autoplay loop>
+    <source src="lala.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Estrellas -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      const estrella = document.createElement("div");
+      estrella.classList.add("estrella");
+      estrella.style.top = `${Math.random() * 100}%`;
+      estrella.style.left = `${Math.random() * 100}%`;
+      estrella.style.animationDuration = `${1 + Math.random() * 2}s`;
+      document.body.appendChild(estrella);
+    }
+  </script>
+
+  <!-- Palabras iniciales -->
+  <div class="palabra uno">HOLA</div>
+  <div class="palabra dos">ARI</div>
+  <div class="palabra tres">PRECIOSA</div>
+
+  <!-- Texto que aparece luego -->
+  <div class="texto" id="mensaje"></div>
+  <div class="final">Gracias por existir un añito más preciosa y estar en mi vida</div>
+  <div class="firma">– A.</div>
+
+  <!-- Generador de palabras animadas -->
+  <script>
+    const texto = `Me da un poco de pena acercarme así a ti de nuevo Ari, de hecho quería enviarte esto por tu cumpleaños pero no pude esperar más, realmente necesitaba conversar contigo. Siento que todo quedó muy inconcluso, estuve pensando muchas noches en todo lo que había pasado y llegué a la conclusión que de hecho nada había quedado claro en realidad, leí tu último mensaje varias veces, pensaba en ti cada día y entendí que pudiste malinterpretar lo que traté de decir en ese audio, de verdad no sé exactamente cómo lo tomaste pero interpreto que mal :c lo siento en verdad. Yo tengo claro desde hace mucho que quería hacer que en algún momento funcione si surge algo entre los 2. Te lo dije esa noche aunque me puse nervioso, la verdad quisiera conversar mejor contigo las cosas personalmente. Yo sé que eres una niña increíble y de un corazón grande, lo sé desde hace mucho y en verdad nunca quise dejarte ir ni quiero hacerlo. Solo pensé que necesitarías algo de tiempo y espacio. Seguro que no fue la mejor manera en la que lo hice y lo siento tanto de verdad Ari. Yo de verdad quiero que funcione y te fui claro ya con lo que siento. Quizás aún no sea mutuo ni nada y está bien como te dije, pero al menos quisiera seguir intentando llegar a tu corazoncito. Quizás algún día me dejes abrirlo y me dejes entrar ahí. Aún quisiera conversar de todo esto contigo personalmente Ari. Por textos o audios es más complicado que nos entendamos. Haré el esfuerzo porque cada vez que te tengo cerca me nublo y mi corazón late más rápido preciosa. Espero no estés molesta o algo conmigo por favor y si es así discúlpame. Quiero que sigamos conversando como antes. Yo te extraño mucho y nada de lo que dije antes para mí fue mentira. De verdad quisiera algún día cumplir las cosas que te dije: irnos de viaje a pueblitos mágicos, como habíamos quedado en ver El Conjuro, ir a la playa de noche y ver el mar. Quisiera cumplir todas mis metas junto a ti y celebrar tus logros a lo grande preciosa. Déjame intentar hacerte feliz Ari. Espero te haya gustado tu ramito de rosas que te mandé y ojalá también hayas leído la tarjeta. Te quiero mucho preciosa, créeme que toda esta última semana estuve pensando solo en ti y viendo cada vez más tus estados con el ramo que te regalé y de hecho noté que quitaste 2 🥺. Espero no sea porque no te gustaron. No sé qué pensarás ahora hermosa ni qué me responderás, pero te diré una vez más que te quiero mucho y eso no va a cambiar.`;
+
+    const contenedor = document.getElementById('mensaje');
+    let delayBase = 6;
+    let delayIncrement = 0.2;
+
+    texto.split(/\s+/).forEach((palabra, i) => {
+      const span = document.createElement('span');
+      span.className = 'palabra-texto';
+      span.style.animationDelay = `${delayBase + i * delayIncrement}s`;
+      span.textContent = palabra;
+      contenedor.appendChild(span);
+    });
+  </script>
+</body>
+</html>
